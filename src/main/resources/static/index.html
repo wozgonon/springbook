@@ -1,23 +1,44 @@
 <html>
 <head>
-<title>Booking</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <div class="navbar">
-        <div class="navbar-inner">
-            <a class="brand" href="#">ToDo API Client Demo</a>
-        </div>
-    </div>
-    <div id="main" class="container">
-
-        Main content here!
-
-    </div>
+    <title>Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript">
 
-        // application code here!
+function listBookings () {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "/booking/list?user=abc", true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send();
 
+    var obj = xhttp.responseText
+    alert(obj);
+    document.getElementById("list").innerHTML = "<BR><textarea rows='10' cols='100'>" + obj + "</textarea>";
+}
     </script>
+</head>
+<body>
+
+<div id="main" class="container">
+
+    <h2>Bookings</h2>
+<form action="/booking/create">
+    <input type="hidden" name="user" value="abc"/>
+    <p>Date:
+    <input type="date" name="date"/>
+    <p>Note:
+    <input type="textarea" name="note"/>
+    <p>
+    <input type="submit" value="create"/>
+</form>
+
+</div>
+
+<p>
+    <button type="submit" onclick="javascript:listBookings()">List bookings</button>
+</p>
+
+<div id="list" class="container">
+</div>
+
 </body>
 </html>
