@@ -1,6 +1,7 @@
 package springbook;
 
 import org.junit.Test;
+import springbook.model.Booking;
 
 import static org.junit.Assert.*;
 

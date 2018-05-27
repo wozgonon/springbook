@@ -1,33 +1,32 @@
-package springbook;
+package springbook.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import springbook.model.Booking;
+import springbook.service.BookingService;
 
 import java.util.Collection;
 
 @RestController
-@EnableAutoConfiguration
-public class SpringBookController {
+public class BookingController {
 
     @Autowired
     BookingService bookingService;
 
     @RequestMapping("/booking/create")
-    public Booking createBooking(@PathVariable String user, @PathVariable String date, @PathVariable String note) {
+    public Booking createBooking(@RequestParam String user, @RequestParam String date, @RequestParam String note) {
         return bookingService.createBooking(user, date, note);
     }
 
     @RequestMapping("/booking/delete")
-    public void deleteBooking(@PathVariable String bookingId) throws BookingService.UnknownBooking {
+    public void deleteBooking(@RequestParam String bookingId) throws BookingService.UnknownBooking {
         bookingService.deleteBooking(bookingId);
     }
 
     @RequestMapping("/booking/list")
-    public Collection<Booking> listBookings(@PathVariable String user) {
+    public Collection<Booking> listBookings(@RequestParam String user) {
         return bookingService.listBookings(user);
     }
 }
-

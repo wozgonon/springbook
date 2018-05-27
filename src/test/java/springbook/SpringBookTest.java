@@ -3,19 +3,22 @@ package springbook;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import springbook.controller.BookingController;
+import springbook.model.Booking;
+import springbook.service.BookingService;
 
 import java.util.Collection;
 
 //import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 
 //@RunWith(SpringRunner.class)
-//@WebMvcTest(value = SpringBookController.class, secure = false)
+//@WebMvcTest(value = BookingController.class, secure = false)
 //@ContextConfiguration(locations = "classpath:application.properties")
 //@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class SpringBookTest {
 
     @Autowired
-    SpringBookController springBook;
+    BookingController springBook;
 
     @Test
     @Ignore

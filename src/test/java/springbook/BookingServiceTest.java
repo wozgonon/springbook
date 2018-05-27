@@ -1,8 +1,9 @@
 package springbook;
 
-import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+import springbook.model.Booking;
+import springbook.service.BookingService;
 
 import java.util.Collection;
 

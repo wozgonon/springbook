@@ -1,4 +1,4 @@
-package springbook;
+package springbook.model;
 
 @lombok.Getter
 @lombok.Setter

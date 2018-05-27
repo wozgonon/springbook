@@ -8,8 +8,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<jdk.version>1.8</jdk.version>
-		<spring.version>4.1.1.RELEASE</spring.version>
 		<junit.version>4.12</junit.version>
 	</properties>
 
@@ -22,20 +20,17 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<version>2.0.2.RELEASE</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-test -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-test</artifactId>
-			<version>2.0.2.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-autoconfigure -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-autoconfigure</artifactId>
-			<version>2.0.2.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -51,7 +46,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>4.3.3.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -68,7 +62,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>springboot</mainClass>
+							<mainClass>springbook.Application</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
