@@ -1,41 +1,60 @@
+<!--    Springbook - simple demonstration project
+        Copyright (C) 2018 JB
+
+        This program is free software; you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation; either version 2 of the License, or
+        (at your option) any later version.
+
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+
+        You should have received a copy of the GNU General Public License along
+        with this program; if not, write to the Free Software Foundation, Inc.,
+        51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+-->
+
 <html>
 <head>
     <title>Booking</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript">
-
-function listBookings () {
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "/booking/list?user=abc", true);
-    xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.send();
-
-    var obj = xhttp.responseText
-    alert(obj);
-    document.getElementById("list").innerHTML = "<BR><textarea rows='10' cols='100'>" + obj + "</textarea>";
-}
+    <style>
+        .container1 { border:2px solid #ccc; width:300px; height: 200px; }
+        .container  { border:2px solid #ccc; width:300px; height: 200px; overflow-y: scroll; }
+    </style>
+    <script src="booking.js"></script>
+    <script>
+        document.onload = listBookings
     </script>
-</head>
-<body>
 
-<div id="main" class="container">
+</head>
+<body onload="javascript:listBookings()">
+
+<div id="main" class="container1">
 
     <h2>Bookings</h2>
-<form action="/booking/create">
-    <input type="hidden" name="user" value="abc"/>
-    <p>Date:
-    <input type="date" name="date"/>
-    <p>Note:
-    <input type="textarea" name="note"/>
-    <p>
-    <input type="submit" value="create"/>
-</form>
+    <form action="/booking/create" onSubmit="javascript:listBookings()" method="POST">
+        <input type="hidden" name="user" value="aUser"/>
+        <p>Date:
+            <input id="datePicker" type="date" name="date"/>
+        <p>Note:
+            <input type="textarea" name="note"/>
+        <p>
+            <button type="submit" value="Submit">Create</button>
+    </form>
 
+    <script>
+        document.getElementById("datePicker").valueAsDate = new Date()
+    </script>
 </div>
 
 <p>
     <button type="submit" onclick="javascript:listBookings()">List bookings</button>
 </p>
+
 
 <div id="list" class="container">
 </div>

@@ -34,3 +34,9 @@ Delete a user's bookings:
 ```
 http://localhost:1235/booking/delete?bookingId=397e4a9e-ee50-4ab8-b789-329875de37cc
 ```
+
+## UI
+
+The user interface is currently minimal allowing the creation and listing
+of bookings:  <a href="screenshot1.png">A screenshot</a>.
+
